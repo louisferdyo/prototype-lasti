@@ -53,9 +53,9 @@ export default function NutritionCalculator() {
   }, [portion])
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 md:p-16">
+    <div className="w-screen h-screen min-h-screen bg-gray-100 p-4 flex items-center justify-center md:p-4">
       <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-        <div className=" p-4 md:p-6 rounded-lg w-full md:w-1/2">
+        <div className=" p-4 md:px-20 md:py-8 after:rounded-lg w-full md:w-1/2 justify-between">
           <form className="space-y-4 md:space-y-6">
             <h1 className="text-3xl font-bold mb-6 text-center lg:text-left">Nutrition Calculator</h1>
             <div>
@@ -70,7 +70,7 @@ export default function NutritionCalculator() {
             </div>
             <div>
               <Label htmlFor="portion">Portion</Label>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-6">
                 <Input
                   id="portion"
                   type="number"
@@ -93,8 +93,9 @@ export default function NutritionCalculator() {
             <Button type="button" onClick={handleCalculate} className="w-full">Calculate</Button>
           </form>
         </div>
-        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md w-full md:w-1/2">
+        <div className="bg-white p-4 md:px-20 md:py-8 rounded-lg shadow-md w-full md:w-1/2">
           <h2 className="text-xl font-semibold mb-4">Nutrition Information</h2>
+          <p className='text-gray-400 mb-4'>Enter a food name and portion, then click "Calculate" to see nutrition information.</p>
           {nutritionInfo ? (
             <div className="space-y-2">
               <p className="flex justify-between">
@@ -115,7 +116,25 @@ export default function NutritionCalculator() {
               </p>
             </div>
           ) : (
-            <p className="text-gray-500">Enter a food name and portion, then click "Calculate" to see nutrition information.</p>
+            // Reserve space for content, even if it's not available
+            <>
+              <p className="flex justify-between">
+                <span>Calories:</span>
+                <span className="text-gray-400">---</span>
+              </p>
+              <p className="flex justify-between">
+                <span>Protein:</span>
+                <span className="text-gray-400">---</span>
+              </p>
+              <p className="flex justify-between">
+                <span>Carbs:</span>
+                <span className="text-gray-400">---</span>
+              </p>
+              <p className="flex justify-between">
+                <span>Fat:</span>
+                <span className="text-gray-400">---</span>
+              </p>
+            </>
           )}
         </div>
       </div>
