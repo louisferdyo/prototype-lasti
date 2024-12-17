@@ -1,5 +1,5 @@
 'use client'
-
+import React from 'react'
 import { useState, useCallback } from 'react'
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -57,7 +57,7 @@ export default function NutritionCalculator() {
       <div className="flex flex-col md:flex-row gap-4 md:gap-8">
         <div className=" p-4 md:px-20 md:py-8 after:rounded-lg w-full md:w-1/2 justify-between">
           <form className="space-y-4 md:space-y-6">
-            <h1 className="text-4xl font-bold mb-6 text-center lg:text-left text-white">Nutrition Calculator</h1>
+            <h1 className="text-4xl font-bold mb-6 text-center lg:text-left text-slate-900 font-nunito">Nutrition Calculator</h1>
             <div>
               <Label htmlFor="foodName" className='text-[#A8CD89]'>Food Name</Label>
               <Input
@@ -95,13 +95,13 @@ export default function NutritionCalculator() {
           </form>
         </div>
         <div className="bg-[#85b943] p-4 md:px-20 md:py-8 rounded-lg shadow-sm w-full md:w-1/2">
-          <h2 className="text-xl font-semibold mb-4">Nutrition Information</h2>
-          <p className='text-white mb-4'>Enter food name and portion, then click the "Calculate" button to see nutrition information.</p>
+          <h2 className="text-2xl font-bold mb-1 font-nunito">Nutrition Information</h2>
+          <p className='text-white mb-4 font-nunito'>Enter food name and portion, then click the &quot;Calculate&quot; button to see nutrition information.</p>
           {nutritionInfo ? (
             <div className="space-y-2">
               <p className="flex justify-between">
                 <span>Calories:</span>
-                <span className="font-semibold">{nutritionInfo.calories}</span>
+                <span className="font-semibold">{nutritionInfo.calories} cal</span>
               </p>
               <p className="flex justify-between">
                 <span>Protein:</span>
