@@ -3,7 +3,7 @@ import { Utensils } from 'lucide-react';
 
 export const Hero = () => {
   return (
-    <div className="relative bg-gradient-to-br from-[#85b943] to-[#004c30] text-white font-Nunito">
+    <div className="relative bg-gradient-to-br from-[#7FBF5E] to-[#005C3D] text-white font-Nunito">
       <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center">
           <div className="flex justify-center mb-6">

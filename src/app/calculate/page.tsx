@@ -106,10 +106,8 @@ export default function NutritionCalculator() {
         </div>
         <div className="bg-[#7FBF5E] p-6 md:px-14 md:py-10 rounded-lg shadow-md w-full md:w-1/2 font-nunito">
           <h2 className="text-2xl font-bold mb-4 text-green-900">Nutrition Information</h2>
+          <p className="text-green-900 mb-4">Enter food name and portion, then click the &quot;Calculate&quot; button to see nutrition information.</p>
           {error && <p className="text-red-600">{error}</p>}
-          {!error && !nutritionInfo && (
-            <p className="text-green-900 mb-4">Enter food name and portion, then click the "Calculate" button to see nutrition information.</p>
-          )}
           {nutritionInfo && (
             <div className="space-y-3">
               <p className="flex justify-between text-green-900">
