@@ -1,14 +1,17 @@
 'use client'
 import React, { useState } from 'react';
 import { Utensils, Apple, Calculator, Calendar, Users } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login submitted:', { email, password });
+    router.push('/');
   };
 
   return (
@@ -61,7 +64,7 @@ export default function Login() {
                   Remember me
                 </label>
               </div>
-              <a href="/forgot-password" className="text-sm text-green-600 hover:text-emerald-700">
+              <a href="/login" className="text-sm text-green-600 hover:text-emerald-700">
                 Forgot password?
               </a>
             </div>

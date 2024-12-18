@@ -1,16 +1,20 @@
 'use client'
 import React, { useState } from 'react';
 import { Utensils, Apple, Calculator, Calendar, Users } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function Signup () {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Signup submitted:', { fullName, email, password, confirmPassword });
+    router.push('/login');
+    
   };
 
   return (

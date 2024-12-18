@@ -7,6 +7,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
 interface NutritionInfo {
   calories: number;
@@ -64,6 +66,8 @@ export default function NutritionCalculator() {
   }, [foodName, portion]);
 
   return (
+    <>
+    <Navbar/>
     <div className="w-screen h-screen min-h-screen bg-gradient-to-br from-[#7FBF5E] to-[#005C3D] p-6 flex items-center justify-center font-nunito">
       <div className="flex flex-col md:flex-row gap-6 md:gap-12">
         <div className="bg-transparent rounded-lg p-6 md:px-14 md:py-10 w-full md:w-1/2">
@@ -132,5 +136,7 @@ export default function NutritionCalculator() {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }

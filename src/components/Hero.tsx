@@ -15,9 +15,9 @@ export const Hero = () => {
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-lora">
             Personalized diet plans, nutritional facts, supportive community, and many more.
           </p>
-          <a href='/calculate'>
+          <a href='/login'>
             <button className="bg-white text-emerald-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-orange-500 hover:text-emerald-700 transition duration-300 font-nunito" >
-                Calculate your nutrition!
+                Start Now
             </button>
           </a>
         </div>
