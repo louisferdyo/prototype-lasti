@@ -46,7 +46,7 @@ export default function NutritionCalculator() {
 
       // Ambil data nutrisi dari OpenAI API
       const nutrition = await fetchNutritionInfo(foodName);
-
+      console.log("nutrition:",nutrition)
       // Hitung nutrisi berdasarkan porsi
       const calculatedNutrition: NutritionInfo = {
         calories: Math.round(nutrition.calories * portion),
@@ -56,9 +56,10 @@ export default function NutritionCalculator() {
       };
 
       setNutritionInfo(calculatedNutrition);
-    } catch (err) {
+    } catch (err:any) {
       console.error(err);
-      setError('Failed to fetch nutrition data. Please try again.');
+      setNutritionInfo(null);
+      setError(err.message || 'Failed to fetch nutrition data. Please try again.');
     }
   }, [foodName, portion]);
 
