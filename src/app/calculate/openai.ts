@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
-const API_KEY = 'AIzaSyBh3AYaHHrwj7tgMGEhajgPIoRoSDRLBeo';
-
 interface GeminiResponse {
   candidates: { content: { parts: { text: string }[] } }[];
 }
@@ -24,7 +21,7 @@ function cleanJsonResponse(response: string): string {
   
     try {
       const response = await axios.post<GeminiResponse>(
-        `${API_URL}?key=${API_KEY}`,
+        `${process.env.API_URL}?key=${process.env.API_KEY}`,
         {
           contents: [{ parts: [{ text: prompt }] }],
         },
