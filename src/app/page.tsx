@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer';
 function Dashboard() {
   return (
     <>
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FDF7F4]">
       <Hero/>
       <Features/>
     </div>

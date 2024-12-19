@@ -12,14 +12,13 @@ const navItems = [
 
 export const Navbar = () => {
   return (
-    <nav className="bg-green-800 shadow-sm w-full fixed font-nunito">
+    <nav className="bg-[#85A98F] shadow-sm w-full fixed font-nunito">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo and Brand */}
           <a href= "/" className="flex items-center space-x-2">
-            <Utensils className="h-8 w-8 text-green-600" />
+            <Utensils className="h-8 w-8 text-green-300" />
             <span className="text-3xl font-bold text-green-950">
-              Food<span className="text-green-600">Fix</span>
+              Food<span className="text-green-300">Fix</span>
             </span>
           </a>
 

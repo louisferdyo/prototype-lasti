@@ -68,13 +68,13 @@ export default function NutritionCalculator() {
   return (
     <>
     <Navbar/>
-    <div className="w-screen h-screen min-h-screen bg-gradient-to-br from-[#7FBF5E] to-[#005C3D] p-6 flex items-center justify-center font-nunito">
+    <div className="w-screen h-screen min-h-screen bg-gradient-to-br from-[#FDF7F4] to-[#b6e9ac] p-6 flex items-center justify-center font-nunito">
       <div className="flex flex-col md:flex-row gap-6 md:gap-12">
         <div className="bg-transparent rounded-lg p-6 md:px-14 md:py-10 w-full md:w-1/2">
           <form className="space-y-6">
-            <h1 className="text-3xl font-bold mb-6 text-center lg:text-left text-green-900">Nutrition Calculator</h1>
+            <h1 className="text-3xl font-bold mb-6 text-center lg:text-left text-[#5A6C57]">Nutrition Calculator</h1>
             <div>
-              <Label htmlFor="foodName" className="text-green-900 text-xl font-bold">Food Name</Label>
+              <Label htmlFor="foodName" className="text-[#525B44] text-xl font-bold">Food Name</Label>
               <Input
                 id="foodName"
                 type="text"
@@ -85,7 +85,7 @@ export default function NutritionCalculator() {
               />
             </div>
             <div>
-              <Label htmlFor="portion" className="text-green-900 text-xl font-bold">Portion</Label>
+              <Label htmlFor="portion" className="text-[#525B44] text-xl font-bold">Portion</Label>
               <div className="flex items-center space-x-6">
                 <Input
                   id="portion"
@@ -106,28 +106,28 @@ export default function NutritionCalculator() {
                 />
               </div>
             </div>
-            <Button type="button" onClick={handleCalculate} className="w-full bg-[#FFA500] hover:bg-[#FF8C00] text-white">Calculate</Button>
+            <Button type="button" onClick={handleCalculate} className="w-full bg-[#997C70] hover:bg-[#685752] text-white">Calculate</Button>
           </form>
         </div>
-        <div className="bg-[#7FBF5E] p-6 md:px-14 md:py-10 rounded-lg shadow-md w-full md:w-1/2 font-nunito">
-          <h2 className="text-2xl font-bold mb-4 text-green-900">Nutrition Information</h2>
-          <p className="text-green-900 mb-4">Enter food name and portion, then click the &quot;Calculate&quot; button to see nutrition information.</p>
+        <div className="bg-[#b2e2a8] p-6 md:px-14 md:py-10 rounded-lg shadow-md w-full md:w-1/2 font-nunito">
+          <h2 className="text-2xl font-bold mb-4 text-[#525B44]">Nutrition Information</h2>
+          <p className="text-[#525B44] mb-4">Enter food name and portion, then click the &quot;Calculate&quot; button to see nutrition information.</p>
           {error && <p className="text-red-600">{error}</p>}
           {nutritionInfo && (
             <div className="space-y-3">
-              <p className="flex justify-between text-green-900">
+              <p className="flex justify-between text-[#525B44]">
                 <span>Calories:</span>
                 <span className="font-semibold">{nutritionInfo.calories} cal</span>
               </p>
-              <p className="flex justify-between text-green-900">
+              <p className="flex justify-between text-[#525B44]">
                 <span>Protein:</span>
                 <span className="font-semibold">{nutritionInfo.protein} g</span>
               </p>
-              <p className="flex justify-between text-green-900">
+              <p className="flex justify-between text-[#525B44]">
                 <span>Carbs:</span>
                 <span className="font-semibold">{nutritionInfo.carbs} g</span>
               </p>
-              <p className="flex justify-between text-green-900">
+              <p className="flex justify-between text-[#525B44]">
                 <span>Fat:</span>
                 <span className="font-semibold">{nutritionInfo.fat} g</span>
               </p>
