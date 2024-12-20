@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
-const API_KEY = 'AIzaSyBh3AYaHHrwj7tgMGEhajgPIoRoSDRLBeo';
-
 interface GeminiResponse {
   candidates: { content: { parts: { text: string }[] } }[];
 }
@@ -22,12 +19,19 @@ function cleanJsonResponse(response: string): string {
   export async function fetchNutritionInfo(foodName: string): Promise<NutritionInfo> {
     const prompt = buildPrompt(foodName);
   
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL; 
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY; 
+
+    if (!apiUrl || !apiKey) {
+      throw new Error('API URL or API Key is missing from environment variables.');
+    }
     try {
       const response = await axios.post<GeminiResponse>(
-        `${API_URL}?key=${API_KEY}`,
+        `${apiUrl}?key=${apiKey}`,
         {
           contents: [{ parts: [{ text: prompt }] }],
         },
+       
         {
           headers: {
             'Content-Type': 'application/json',
@@ -37,7 +41,11 @@ function cleanJsonResponse(response: string): string {
   
       // Ambil respons teks dari Gemini
       let responseText = response.data.candidates[0]?.content.parts[0]?.text;
-  
+      if (responseText && !responseText.includes("json")) {
+        console.error("Response indicates an unrecognized entity.");
+        throw new Error('No valid response from Gemini API');
+      }
+      console.log(responseText)
       if (responseText) {
         // Bersihkan format  Markdown dari respons
         responseText = cleanJsonResponse(responseText);

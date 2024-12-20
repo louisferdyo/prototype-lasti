@@ -1,6 +1,6 @@
 import React from 'react';
 import { Cards } from './Cards';
-import { Clipboard, Apple, Calendar, Users } from 'lucide-react';
+import { Calculator, Apple, Calendar, Users } from 'lucide-react';
 
 export const Features = () => {
   const features = [
@@ -11,9 +11,9 @@ export const Features = () => {
       link: ''
     },
     {
-      title: 'Calculate Nutrition',
+      title: 'Nutrition Calculator',
       description: 'Discover the nutritional facts of your food',
-      icon: Clipboard,
+      icon: Calculator,
       link: '/calculate'
     },
     {
