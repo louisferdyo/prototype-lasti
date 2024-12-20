@@ -39,7 +39,7 @@ function cleanJsonResponse(response: string): string {
       let responseText = response.data.candidates[0]?.content.parts[0]?.text;
   
       if (responseText) {
-        // Bersihkan format Markdown dari respons
+        // Bersihkan format  Markdown dari respons
         responseText = cleanJsonResponse(responseText);
   
         // Parsing respons menjadi JSON
